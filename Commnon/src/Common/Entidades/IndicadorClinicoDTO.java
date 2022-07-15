@@ -9,15 +9,15 @@ import java.util.ArrayList;
 public class IndicadorClinicoDTO {
 
     private int frecuenciaCardiaca;
-    private ArrayList<Integer> tencionArterial;
+    private TensionArterialDTO tensionArterial;
     private int frecuenciaRespiratoria;
     private float temperatura;
     private int saturacionOxigeno;
 
-    public IndicadorClinicoDTO(int frecuenciaCardiaca, ArrayList<Integer> tencionArterial,
+    public IndicadorClinicoDTO(int frecuenciaCardiaca, TensionArterialDTO tencionArterial,
             int frecuenciaRespiratoria, float temperatura, int saturacionOxigeno) {
         this.frecuenciaCardiaca = frecuenciaCardiaca;
-        this.tencionArterial = tencionArterial;
+        this.tensionArterial = tencionArterial;
         this.frecuenciaRespiratoria = frecuenciaRespiratoria;
         this.temperatura = temperatura;
         this.saturacionOxigeno = saturacionOxigeno;
@@ -31,12 +31,12 @@ public class IndicadorClinicoDTO {
         this.frecuenciaCardiaca = frecuenciaCardiaca;
     }
 
-    public ArrayList<Integer> getTencionArterial() {
-        return tencionArterial;
+    public TensionArterialDTO getTensionArterial() {
+        return tensionArterial;
     }
 
-    public void setTencionArterial(ArrayList<Integer> tencionArterial) {
-        this.tencionArterial = tencionArterial;
+    public void setTensionArterial(TensionArterialDTO tencionArterial) {
+        this.tensionArterial = tencionArterial;
     }
 
     public int getFrecuenciaRespiratoria() {

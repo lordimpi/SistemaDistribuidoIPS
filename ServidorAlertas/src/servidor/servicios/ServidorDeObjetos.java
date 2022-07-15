@@ -1,4 +1,4 @@
-package servicios;
+package servidor.servicios;
 
 import cliente.utilidades.UtilidadesConsola;
 import common.utilidades.UtilidadesRegistroS;
@@ -14,21 +14,15 @@ public class ServidorDeObjetos {
 
     public static void main(String args[]) throws RemoteException {
 
-        int numPuertoRMIRegistryServidorCanciones,numPuertoRMIRegistryServidorRespaldo;
-        String direccionIpRMIRegistryServidorCanciones, direccionIpRMIRegistryServidorRespaldo;
+        int numPuertoRMIRegistryServidorCanciones;
+        String direccionIpRMIRegistryServidorCanciones;
 
         System.out.println("Cual es el la dirección ip donde se encuentra  el rmiRegistry servidor Alertas");
         direccionIpRMIRegistryServidorCanciones = UtilidadesConsola.leerCadena();
         System.out.println("Cual es el número de puerto por el cual escucha el rmiRegistry servidor Alertas");
         numPuertoRMIRegistryServidorCanciones = UtilidadesConsola.leerEntero();
         
-        //System.out.println("Cual es el la dirección ip donde se encuentra  el rmiRegistry de respalo");
-        //direccionIpRMIRegistryServidorRespaldo = UtilidadesConsola.leerCadena();
-        //System.out.println("Cual es el número de puerto por el cual escucha el rmiRegistry de respaldo");
-        //numPuertoRMIRegistryServidorRespaldo = UtilidadesConsola.leerEntero();
-
-
-        //CancionRepository objRepository = new CancionRepository();
+          //CancionRepository objRepository = new CancionRepository();
         ControladorGestionNotificacionesImpl objRemotoGestionNotificaciones = new ControladorGestionNotificacionesImpl();
         //ControladorGestorCancionesImpl objRemotoGestionCanciones = new ControladorGestorCancionesImpl(
           //      objRepository, objRemotoGestionAdministradores);
