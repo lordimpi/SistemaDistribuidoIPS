@@ -1,9 +1,9 @@
 package cliente.servicios;
 
-import cliente.controladores.ClienteNotificacionCallbackImpl;
+import cliente.controladores.IClienteNotificacionCallbackImp;
 import cliente.utilidades.UtilidadesRegistroC;
 import java.rmi.RemoteException;
-import servidor.controladores.ControladorGestionNotificacionesInt;
+import Common.Interfaces.IControladorGestionNotificaciones;
 
 /**
  *
@@ -11,7 +11,7 @@ import servidor.controladores.ControladorGestionNotificacionesInt;
  */
 public class ClienteDeObjetos {
 
-    private static ControladorGestionNotificacionesInt objRemoto;
+    private static IControladorGestionNotificaciones objRemoto;
 
     public static void main(String[] args) throws RemoteException {
 
@@ -23,9 +23,9 @@ public class ClienteDeObjetos {
         System.out.println("Cual es el número de puerto por el cual escucha el rmiregistry ");
         numPuertoRMIRegistry = cliente.utilidades.UtilidadesConsola.leerEntero();
 
-        objRemoto = (ControladorGestionNotificacionesInt) UtilidadesRegistroC.obtenerObjRemoto(direccionIpRMIRegistry,
+        objRemoto = (IControladorGestionNotificaciones) UtilidadesRegistroC.obtenerObjRemoto(direccionIpRMIRegistry,
                 numPuertoRMIRegistry, "objServicioGestionAdministradores");
-        ClienteNotificacionCallbackImpl objRemotoClienteNotificacion = new ClienteNotificacionCallbackImpl();
+        IClienteNotificacionCallbackImp objRemotoClienteNotificacion = new IClienteNotificacionCallbackImp();
         objRemoto.registrarReferenciaRemotaClienteNotificacion(objRemotoClienteNotificacion);
 
         System.out.println("Esperando notificaciones...");

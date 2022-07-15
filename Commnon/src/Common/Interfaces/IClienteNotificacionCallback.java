@@ -3,13 +3,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
 package Common.Interfaces;
+
 import java.rmi.Remote;
 import java.rmi.RemoteException;
+import Common.Entidades.SensorDTO;
 
 /**
  *
  * @author adrianfelipegp
  */
-public interface IControladorClienteNotificaciones extends Remote{
-    public boolean guardarreferenciaremotacliente(INotificacionCallback referencia) throws RemoteException;
+public interface IClienteNotificacionCallback extends Remote{
+    public void notificarAlerta(SensorDTO objSensor) throws RemoteException;
 }

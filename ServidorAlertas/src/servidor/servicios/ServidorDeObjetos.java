@@ -1,8 +1,8 @@
 package servidor.servicios;
 
+import cliente.controladores.IControladorGestionNotificacionesImp;
 import cliente.utilidades.UtilidadesConsola;
 import common.utilidades.UtilidadesRegistroS;
-import controladores.ControladorGestionNotificacionesImpl;
 import java.rmi.RemoteException;
 
 
@@ -23,7 +23,7 @@ public class ServidorDeObjetos {
         numPuertoRMIRegistryServidorCanciones = UtilidadesConsola.leerEntero();
         
           //CancionRepository objRepository = new CancionRepository();
-        ControladorGestionNotificacionesImpl objRemotoGestionNotificaciones = new ControladorGestionNotificacionesImpl();
+        IControladorGestionNotificacionesImp objRemotoGestionNotificaciones = new IControladorGestionNotificacionesImp();
         //ControladorGestorCancionesImpl objRemotoGestionCanciones = new ControladorGestorCancionesImpl(
           //      objRepository, objRemotoGestionAdministradores);
         

@@ -1,6 +1,7 @@
 
 package servidor.controladores;
 
+import cliente.controladores.IControladorGestionNotificacionesImp;
 import Common.Entidades.IndicadorClinicoDTO;
 import java.rmi.server.UnicastRemoteObject;
 import Common.Entidades.SensorDTO;
@@ -15,9 +16,9 @@ import java.util.Calendar;
  */
 public class IControladorSensorImp extends UnicastRemoteObject implements IControladorSensor{
     private final IControladorLog servidorLog;
-    private final IControladorClienteNotificacionesImp controladorNotificaciones;
+    private final IControladorGestionNotificacionesImp controladorNotificaciones;
     
-    public IControladorSensorImp(IControladorLog servidorLog, IControladorClienteNotificacionesImp controladorNotificaciones){
+    public IControladorSensorImp(IControladorLog servidorLog, IControladorGestionNotificacionesImp controladorNotificaciones){
         this.servidorLog = servidorLog;
         this.controladorNotificaciones= controladorNotificaciones;
     }
