@@ -6,9 +6,9 @@ package Common.Entidades;
  */
 public class SensorDTO {
     private int numeroHabitacion;
-    private IndicadorDTO indicador;
+    private IndicadorClinicoDTO indicador;
 
-    public SensorDTO(int numeroHabitacion, IndicadorDTO indicador) {
+    public SensorDTO(int numeroHabitacion, IndicadorClinicoDTO indicador) {
         this.numeroHabitacion = numeroHabitacion;
         this.indicador = indicador;
     }
@@ -21,11 +21,11 @@ public class SensorDTO {
         this.numeroHabitacion = numeroHabitacion;
     }
 
-    public IndicadorDTO getIndicador() {
+    public IndicadorClinicoDTO getIndicador() {
         return indicador;
     }
 
-    public void setIndicador(IndicadorDTO indicador) {
+    public void setIndicador(IndicadorClinicoDTO indicador) {
         this.indicador = indicador;
     }
     

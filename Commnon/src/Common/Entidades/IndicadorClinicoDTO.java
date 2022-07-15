@@ -6,7 +6,7 @@ import java.util.ArrayList;
  *
  * @author snt-2
  */
-public class IndicadorDTO {
+public class IndicadorClinicoDTO {
 
     private int frecuenciaCardiaca;
     private ArrayList<Integer> tencionArterial;
@@ -14,7 +14,7 @@ public class IndicadorDTO {
     private float temperatura;
     private int saturacionOxigeno;
 
-    public IndicadorDTO(int frecuenciaCardiaca, ArrayList<Integer> tencionArterial,
+    public IndicadorClinicoDTO(int frecuenciaCardiaca, ArrayList<Integer> tencionArterial,
             int frecuenciaRespiratoria, float temperatura, int saturacionOxigeno) {
         this.frecuenciaCardiaca = frecuenciaCardiaca;
         this.tencionArterial = tencionArterial;
