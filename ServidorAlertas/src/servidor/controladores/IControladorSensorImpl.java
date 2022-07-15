@@ -10,7 +10,7 @@ import java.rmi.RemoteException;
 public class IControladorSensorImpl extends UnicastRemoteObject implements IControladorSensor {
 
     @Override
-    public void enviarIndicar(SensorDTO objSong) throws RemoteException {
+    public void enviarIndicadores(SensorDTO objSong) throws RemoteException {
       /**/
     }
     
