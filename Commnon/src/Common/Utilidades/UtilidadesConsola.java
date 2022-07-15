@@ -35,6 +35,7 @@ public class UtilidadesConsola
 	public static String leerCadena()
     {
     	String linea = "";
+        
     	boolean valido = false;
     	do
     	{
@@ -44,6 +45,7 @@ public class UtilidadesConsola
                     BufferedReader br = new BufferedReader(new
                     InputStreamReader(System.in));
                     linea = br.readLine();
+                    
                     valido = true;
     		}
     		catch(Exception e)
@@ -54,6 +56,32 @@ public class UtilidadesConsola
     	}while(!valido);
     	
     	return linea;
+    
+    }
+        public static float leerDecimal()
+    {
+    	String linea = "";
+        float numero=0;
+    	boolean valido = false;
+    	do
+    	{
+    		try
+    		{
+                    System.out.println("Ingrese la opcion: ");
+                    BufferedReader br = new BufferedReader(new
+                    InputStreamReader(System.in));
+                    linea = br.readLine();
+                    numero = Float.valueOf(linea);
+                    valido = true;
+    		}
+    		catch(Exception e)
+    		{
+    			System.out.println("Error intente nuevamente...");
+    			valido = false;
+    		}
+    	}while(!valido);
+    	
+    	return numero;
     
     }
 }

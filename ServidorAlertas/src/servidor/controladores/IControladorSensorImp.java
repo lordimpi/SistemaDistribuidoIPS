@@ -1,10 +1,9 @@
-
 package servidor.controladores;
 
-import cliente.controladores.IControladorGestionNotificacionesImp;
 import Common.Entidades.IndicadorClinicoDTO;
 import java.rmi.server.UnicastRemoteObject;
 import Common.Entidades.SensorDTO;
+
 import Common.Interfaces.IControladorLog;
 import Common.Interfaces.IControladorSensor;
 import java.rmi.RemoteException;
@@ -18,12 +17,13 @@ public class IControladorSensorImp extends UnicastRemoteObject implements IContr
     private final IControladorLog servidorLog;
     private final IControladorGestionNotificacionesImp controladorNotificaciones;
     
-    public IControladorSensorImp(IControladorLog servidorLog, IControladorGestionNotificacionesImp controladorNotificaciones){
+    public IControladorSensorImp(IControladorLog servidorLog, IControladorGestionNotificacionesImp controladorNotificaciones)throws RemoteException{
         this.servidorLog = servidorLog;
         this.controladorNotificaciones= controladorNotificaciones;
     }
     @Override
     public void enviarIndicadores(SensorDTO objSensor) throws RemoteException {
+        System.out.println("Se recibio informacion del sensor de la habitacion "+objSensor.getNumeroHabitacion());
        IndicadorClinicoDTO objIndicadores = objSensor.getIndicador();
        int contarIndicadores = 0;
         //si indicador es <=0 reportar logs
@@ -33,7 +33,10 @@ public class IControladorSensorImp extends UnicastRemoteObject implements IContr
             objIndicadores.getTemperatura()<=0||
             objIndicadores.getTensionArterial().getPresionSistolica()<=0||
             objIndicadores.getTensionArterial().getPresionDiastolica()<=0){
+                
+            //aqui va el cliente para el log
                 servidorLog.informarExcepcion(objSensor, Calendar.getInstance());
+                
         }else{
             if(!(objIndicadores.getFrecuenciaCardiaca()>=60 &&objIndicadores.getFrecuenciaCardiaca()<=80)){
                 contarIndicadores++;

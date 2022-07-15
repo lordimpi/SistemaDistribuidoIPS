@@ -1,9 +1,11 @@
 package servidor.servicios;
-
-import cliente.controladores.IControladorGestionNotificacionesImp;
-import cliente.utilidades.UtilidadesConsola;
+import cliente.controladores.IControladorLogImp;
+import static cliente.utilidades.UtilidadesConsola.leerCadena;
+import static cliente.utilidades.UtilidadesConsola.leerEntero;
 import common.utilidades.UtilidadesRegistroS;
 import java.rmi.RemoteException;
+import servidor.controladores.IControladorGestionNotificacionesImp;
+import servidor.controladores.IControladorSensorImp;
 
 
 /**
@@ -18,21 +20,19 @@ public class ServidorDeObjetos {
         String direccionIpRMIRegistryServidorCanciones;
 
         System.out.println("Cual es el la dirección ip donde se encuentra  el rmiRegistry servidor Alertas");
-        direccionIpRMIRegistryServidorCanciones = UtilidadesConsola.leerCadena();
+        direccionIpRMIRegistryServidorCanciones = leerCadena();
         System.out.println("Cual es el número de puerto por el cual escucha el rmiRegistry servidor Alertas");
-        numPuertoRMIRegistryServidorCanciones = UtilidadesConsola.leerEntero();
+        numPuertoRMIRegistryServidorCanciones = leerEntero();
         
-          //CancionRepository objRepository = new CancionRepository();
+        IControladorLogImp servidorLog = new IControladorLogImp();
         IControladorGestionNotificacionesImp objRemotoGestionNotificaciones = new IControladorGestionNotificacionesImp();
-        //ControladorGestorCancionesImpl objRemotoGestionCanciones = new ControladorGestorCancionesImpl(
-          //      objRepository, objRemotoGestionAdministradores);
+        IControladorSensorImp objRemotoGestionSensor = new IControladorSensorImp(servidorLog,objRemotoGestionNotificaciones);
         
         
         try {
             UtilidadesRegistroS.arrancarNS(numPuertoRMIRegistryServidorCanciones);
-            //UtilidadesRegistroS.RegistrarObjetoRemoto(objRemotoGestionCanciones, direccionIpRMIRegistryServidorCanciones,
-              //      numPuertoRMIRegistryServidorCanciones, "objServicioGestionCanciones");
-            //UtilidadesRegistroS.RegistrarObjetoRemoto(objRemotoGestionAdministradores, direccionIpRMIRegistryServidorCanciones, numPuertoRMIRegistryServidorCanciones, "objServicioGestionAdministradores");
+            UtilidadesRegistroS.RegistrarObjetoRemoto(objRemotoGestionNotificaciones, direccionIpRMIRegistryServidorCanciones,numPuertoRMIRegistryServidorCanciones, "objServicioGestionNotificaciones");
+            UtilidadesRegistroS.RegistrarObjetoRemoto(objRemotoGestionSensor, direccionIpRMIRegistryServidorCanciones, numPuertoRMIRegistryServidorCanciones, "objServicioGestionSensores");
         } catch (Exception e) {
             System.err.println("No fue posible Arrancar el NS o Registrar el objeto remoto" + e.getMessage());
         }

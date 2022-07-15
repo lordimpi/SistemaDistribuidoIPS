@@ -4,9 +4,10 @@
  */
 package cliente.servicios;
 
+import Common.Interfaces.IControladorSensor;
 import cliente.utilidades.UtilidadesRegistroC;
 import cliente.vista.Menu;
-import Common.Interfaces.IControladorSensor;
+
 import static cliente.utilidades.UtilidadesConsola.leerCadena;
 import static cliente.utilidades.UtilidadesConsola.leerEntero;
 
@@ -29,8 +30,9 @@ public class ClienteSensor {
         System.out.println("Cual es el número de puerto por el cual escucha el rmiregistry ");
         numPuertoRMIRegistry = leerEntero();
 
-        objRemoto = (IControladorSensor) UtilidadesRegistroC.obtenerObjRemoto(direccionIpRMIRegistry, numPuertoRMIRegistry, "objServicioGestionCanciones");
+        objRemoto = (IControladorSensor) UtilidadesRegistroC.obtenerObjRemoto(direccionIpRMIRegistry, numPuertoRMIRegistry, "objServicioGestionSensores");
         Menu objMenu = new Menu(objRemoto);
         objMenu.ejecutarMenuPrincipal();
+        
     } 
 }

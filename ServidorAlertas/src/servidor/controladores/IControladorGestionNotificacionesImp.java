@@ -1,5 +1,5 @@
 
-package cliente.controladores;
+package servidor.controladores;
 
 
 import Common.Entidades.SensorDTO;

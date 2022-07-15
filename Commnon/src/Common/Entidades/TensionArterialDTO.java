@@ -4,11 +4,13 @@
  */
 package Common.Entidades;
 
+import java.io.Serializable;
+
 /**
  *
  * @author adrianfelipegp
  */
-public class TensionArterialDTO {
+public class TensionArterialDTO implements Serializable{
     int presionSistolica;
     int presionDiastolica;
 
@@ -16,6 +18,8 @@ public class TensionArterialDTO {
         this.presionSistolica = presionSistolica;
         this.presionDiastolica = presionDiastolica;
     }
+    
+    public TensionArterialDTO(){};
 
     public int getPresionSistolica() {
         return presionSistolica;

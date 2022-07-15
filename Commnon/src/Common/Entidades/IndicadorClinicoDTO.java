@@ -1,12 +1,12 @@
 package Common.Entidades;
 
-import java.util.ArrayList;
+import java.io.Serializable;
 
 /**
  *
  * @author snt-2
  */
-public class IndicadorClinicoDTO {
+public class IndicadorClinicoDTO implements Serializable {
 
     private int frecuenciaCardiaca;
     private TensionArterialDTO tensionArterial;
@@ -22,6 +22,7 @@ public class IndicadorClinicoDTO {
         this.temperatura = temperatura;
         this.saturacionOxigeno = saturacionOxigeno;
     }
+    public IndicadorClinicoDTO(){};
 
     public int getFrecuenciaCardiaca() {
         return frecuenciaCardiaca;

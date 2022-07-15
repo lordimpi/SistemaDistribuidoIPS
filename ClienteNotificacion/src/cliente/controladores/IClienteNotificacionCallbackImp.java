@@ -13,7 +13,7 @@ public class IClienteNotificacionCallbackImp extends UnicastRemoteObject impleme
 
     @Override
     public void notificarAlerta(SensorDTO objSensor) throws RemoteException {
-        System.out.println(objSensor.toString());
+        System.out.println(objSensor.getNumeroHabitacion()+objSensor.getIndicador().getFrecuenciaCardiaca());
     }
 
 }
