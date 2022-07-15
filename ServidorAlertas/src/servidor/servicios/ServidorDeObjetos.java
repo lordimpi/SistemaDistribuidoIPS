@@ -1,8 +1,8 @@
 package servidor.servicios;
 
 import cliente.controladores.IControladorGestionNotificacionesImp;
-import cliente.utilidades.UtilidadesConsola;
-import common.utilidades.UtilidadesRegistroS;
+import Common.Utilidades.UtilidadesConsola;
+import Common.Utilidades.UtilidadesRegistroS;
 import java.rmi.RemoteException;
 
 

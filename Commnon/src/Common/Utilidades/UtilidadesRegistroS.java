@@ -1,5 +1,5 @@
 
-package common.utilidades;
+package Common.Utilidades;
 
 
 import java.net.MalformedURLException;

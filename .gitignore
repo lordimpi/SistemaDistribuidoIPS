@@ -30,3 +30,4 @@ hs_err_pid*
 /ClienteNotificacion/dist/
 
 /ServidorAlertas/build/
+/ClienteSensor/dist/

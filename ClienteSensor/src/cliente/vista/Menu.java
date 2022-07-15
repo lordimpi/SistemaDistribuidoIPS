@@ -4,7 +4,7 @@
  */
 package cliente.vista;
 
-import cliente.utilidades.UtilidadesConsola;
+import Common.Utilidades.UtilidadesConsola;
 import java.io.File;
 import Common.Interfaces.IControladorSensor;
 
