@@ -31,3 +31,6 @@ hs_err_pid*
 
 /ServidorAlertas/build/
 /ClienteSensor/dist/
+/ServidorLogs/build/
+/ServidorLogs/dist/
+/ServidorAlertas/dist/

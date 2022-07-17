@@ -13,6 +13,10 @@ public class SensorDTO {
         this.indicador = indicador;
     }
 
+    public SensorDTO() {
+    }
+    
+
     public int getNumeroHabitacion() {
         return numeroHabitacion;
     }
