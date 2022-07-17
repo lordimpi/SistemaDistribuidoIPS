@@ -1,5 +1,5 @@
 
-package cliente.utilidades;
+package Common.Utilidades;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

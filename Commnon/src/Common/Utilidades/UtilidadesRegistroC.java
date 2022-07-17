@@ -1,4 +1,4 @@
-package cliente.utilidades;
+package Common.Utilidades;
 
 import java.rmi.Naming;
 import java.rmi.Remote;

@@ -4,12 +4,12 @@
  */
 package cliente.servicios;
 
-import Common.Interfaces.IControladorSensor;
-import cliente.utilidades.UtilidadesRegistroC;
-import cliente.vista.Menu;
 
-import static cliente.utilidades.UtilidadesConsola.leerCadena;
-import static cliente.utilidades.UtilidadesConsola.leerEntero;
+import Common.Utilidades.UtilidadesRegistroC;
+import cliente.vista.Menu;
+import Common.Interfaces.IControladorSensor;
+import static Common.Utilidades.UtilidadesConsola.leerCadena;
+import static Common.Utilidades.UtilidadesConsola.leerEntero;
 
 /**
  *

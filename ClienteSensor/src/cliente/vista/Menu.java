@@ -4,10 +4,14 @@
  */
 package cliente.vista;
 
+
 import Common.Entidades.IndicadorClinicoDTO;
 import Common.Entidades.SensorDTO;
 import Common.Entidades.TensionArterialDTO;
 import cliente.utilidades.UtilidadesConsola;
+
+import Common.Utilidades.UtilidadesConsola;
+
 import java.io.File;
 import Common.Interfaces.IControladorSensor;
 import static cliente.utilidades.UtilidadesConsola.leerDecimal;
