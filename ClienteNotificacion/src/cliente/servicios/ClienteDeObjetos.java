@@ -4,8 +4,6 @@ import cliente.controladores.IClienteNotificacionCallbackImp;
 import Common.Utilidades.UtilidadesRegistroC;
 import java.rmi.RemoteException;
 import Common.Interfaces.IControladorGestionNotificaciones;
-import static cliente.utilidades.UtilidadesConsola.leerCadena;
-import static cliente.utilidades.UtilidadesConsola.leerEntero;
 
 /**
  *

@@ -1,0 +1,19 @@
+-d
+"D:\\DOCUMENTOS\\Documentos Adrian\\1 Universidad\\2022\\1 SEM\\1 Sistemas Distribuidos\\Parcial 2\\Solucion\\Entregar\\SistemaDistribuidoIPS\\ClienteSensor\\build\\classes"
+-classpath
+"D:\\DOCUMENTOS\\Documentos Adrian\\1 Universidad\\2022\\1 SEM\\1 Sistemas Distribuidos\\Parcial 2\\Solucion\\Entregar\\SistemaDistribuidoIPS\\ClienteSensor\\build\\classes;D:\\DOCUMENTOS\\Documentos Adrian\\1 Universidad\\2022\\1 SEM\\1 Sistemas Distribuidos\\Parcial 2\\Solucion\\Entregar\\SistemaDistribuidoIPS\\Commnon\\dist\\Commnon.jar"
+-sourcepath
+"D:\\DOCUMENTOS\\Documentos Adrian\\1 Universidad\\2022\\1 SEM\\1 Sistemas Distribuidos\\Parcial 2\\Solucion\\Entregar\\SistemaDistribuidoIPS\\ClienteSensor\\build\\empty"
+-target
+17
+-encoding
+UTF-8
+-g
+-processorpath
+"D:\\DOCUMENTOS\\Documentos Adrian\\1 Universidad\\2022\\1 SEM\\1 Sistemas Distribuidos\\Parcial 2\\Solucion\\Entregar\\SistemaDistribuidoIPS\\Commnon\\dist\\Commnon.jar;D:\\DOCUMENTOS\\Documentos Adrian\\1 Universidad\\2022\\1 SEM\\1 Sistemas Distribuidos\\Parcial 2\\Solucion\\Entregar\\SistemaDistribuidoIPS\\ClienteSensor\\build\\empty"
+-s
+"D:\\DOCUMENTOS\\Documentos Adrian\\1 Universidad\\2022\\1 SEM\\1 Sistemas Distribuidos\\Parcial 2\\Solucion\\Entregar\\SistemaDistribuidoIPS\\ClienteSensor\\build\\generated-sources\\ap-source-output"
+-source
+17
+"D:\\DOCUMENTOS\\Documentos Adrian\\1 Universidad\\2022\\1 SEM\\1 Sistemas Distribuidos\\Parcial 2\\Solucion\\Entregar\\SistemaDistribuidoIPS\\ClienteSensor\\src\\cliente\\servicios\\ClienteSensor.java"
+"D:\\DOCUMENTOS\\Documentos Adrian\\1 Universidad\\2022\\1 SEM\\1 Sistemas Distribuidos\\Parcial 2\\Solucion\\Entregar\\SistemaDistribuidoIPS\\ClienteSensor\\src\\cliente\\vista\\Menu.java"

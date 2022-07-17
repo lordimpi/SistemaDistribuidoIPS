@@ -1,11 +1,10 @@
 package servidor.servicios;
 
 import cliente.controladores.IControladorLogImp;
-import static cliente.utilidades.UtilidadesConsola.leerCadena;
-import static cliente.utilidades.UtilidadesConsola.leerEntero;
-import common.utilidades.UtilidadesRegistroS;
-import cliente.controladores.IControladorGestionNotificacionesImp;
+
 import Common.Utilidades.UtilidadesConsola;
+import static Common.Utilidades.UtilidadesConsola.leerCadena;
+import static Common.Utilidades.UtilidadesConsola.leerEntero;
 import Common.Utilidades.UtilidadesRegistroS;
 
 import java.rmi.RemoteException;
