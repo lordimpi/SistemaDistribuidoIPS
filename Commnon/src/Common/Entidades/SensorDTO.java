@@ -16,7 +16,6 @@ public class SensorDTO implements Serializable{
     }
     public SensorDTO(){};
 
-   
     public int getNumeroHabitacion() {
         return numeroHabitacion;
     }
