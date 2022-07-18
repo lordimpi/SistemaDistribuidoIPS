@@ -8,8 +8,8 @@ import static Common.Utilidades.UtilidadesConsola.leerEntero;
 import Common.Utilidades.UtilidadesRegistroS;
 
 import java.rmi.RemoteException;
-import servidor.controladores.IControladorGestionNotificacionesImp;
-import servidor.controladores.IControladorSensorImp;
+import servidor.controladores.ControladorGestionNotificacionesImp;
+import servidor.controladores.ControladorSensorImp;
 
 /**
  *
@@ -35,8 +35,8 @@ public class ServidorDeObjetos {
         numPuertoServidorLogs = UtilidadesConsola.leerEntero();
         
         IControladorLogImp servidorLog = new IControladorLogImp();
-        IControladorGestionNotificacionesImp objRemotoGestionNotificaciones = new IControladorGestionNotificacionesImp();
-        IControladorSensorImp objRemotoGestionSensor = new IControladorSensorImp(servidorLog,objRemotoGestionNotificaciones);
+        ControladorGestionNotificacionesImp objRemotoGestionNotificaciones = new ControladorGestionNotificacionesImp();
+        ControladorSensorImp objRemotoGestionSensor = new ControladorSensorImp(servidorLog,objRemotoGestionNotificaciones);
         
         
 

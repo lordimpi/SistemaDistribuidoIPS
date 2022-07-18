@@ -13,12 +13,12 @@ import java.util.Calendar;
  *
  * @author adrianfelipegp
  */
-public class IControladorSensorImp extends UnicastRemoteObject implements IControladorSensor{
+public class ControladorSensorImp extends UnicastRemoteObject implements IControladorSensor{
     private final IControladorLog servidorLog;
-    private final IControladorGestionNotificacionesImp controladorNotificaciones;
+    private final ControladorGestionNotificacionesImp controladorNotificaciones;
     
 
-    public IControladorSensorImp(IControladorLog servidorLog, IControladorGestionNotificacionesImp controladorNotificaciones)throws RemoteException{
+    public ControladorSensorImp(IControladorLog servidorLog, ControladorGestionNotificacionesImp controladorNotificaciones)throws RemoteException{
     this.servidorLog = servidorLog;
         this.controladorNotificaciones= controladorNotificaciones;
     }
