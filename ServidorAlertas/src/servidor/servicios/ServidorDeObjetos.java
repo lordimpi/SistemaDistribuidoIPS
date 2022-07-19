@@ -24,15 +24,26 @@ public class ServidorDeObjetos {
         int numPuertoServidorLogs;
         String direccionIpRMIRegistryServidorCanciones;
         String direccionIPServidorLogs;
-
+        
+        /*
         System.out.println("Cual es el la dirección ip donde se encuentra  el rmiRegistry servidor Alertas");
         direccionIpRMIRegistryServidorCanciones = leerCadena();
         System.out.println("Cual es el número de puerto por el cual escucha el rmiRegistry servidor Alertas");
         numPuertoRMIRegistryServidorCanciones = leerEntero();
+        
         System.out.println("Ingrese La direccion IP del servidor de Logs: ");
         direccionIPServidorLogs = UtilidadesConsola.leerCadena();
         System.out.println("Ingrese el puerto de escucha: ");
         numPuertoServidorLogs = UtilidadesConsola.leerEntero();
+        */
+        
+        //NS puerto 2020 , ServLogs puerto 3030
+              
+        direccionIpRMIRegistryServidorCanciones = "localhost";
+        numPuertoRMIRegistryServidorCanciones = 2020;
+        direccionIPServidorLogs = "localhost";
+        numPuertoServidorLogs = 3030;
+        
         
         IControladorLogImp servidorLog = new IControladorLogImp();
         IControladorGestionNotificacionesImp objRemotoGestionNotificaciones = new IControladorGestionNotificacionesImp();

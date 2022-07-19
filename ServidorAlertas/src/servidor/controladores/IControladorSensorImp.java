@@ -19,7 +19,7 @@ public class IControladorSensorImp extends UnicastRemoteObject implements IContr
     
 
     public IControladorSensorImp(IControladorLog servidorLog, IControladorGestionNotificacionesImp controladorNotificaciones)throws RemoteException{
-    this.servidorLog = servidorLog;
+        this.servidorLog = servidorLog;
         this.controladorNotificaciones= controladorNotificaciones;
     }
     @Override

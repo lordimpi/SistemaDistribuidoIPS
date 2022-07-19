@@ -10,6 +10,6 @@ import java.rmi.Remote;
  */
 public interface IControladorGestionNotificaciones extends Remote {
 
-    public void registrarReferenciaRemotaClienteNotificacion(IClienteNotificacionCallback objReferencia) throws RemoteException;
+    public int registrarReferenciaRemotaClienteNotificacion(IClienteNotificacionCallback objReferencia) throws RemoteException;
 
 }

@@ -17,16 +17,21 @@ public class ClienteDeObjetos {
 
         int numPuertoRMIRegistry = 0;
         String direccionIpRMIRegistry = "";
-
+/*
         System.out.println("Cual es el la dirección ip donde se encuentra  el rmiregistry ");
-
         direccionIpRMIRegistry = Common.Utilidades.UtilidadesConsola.leerCadena();
         System.out.println("Cual es el número de puerto por el cual escucha el rmiregistry ");
         numPuertoRMIRegistry = Common.Utilidades.UtilidadesConsola.leerEntero();
+        */
+        
+      
+        direccionIpRMIRegistry = "localhost";
+        numPuertoRMIRegistry = 2020;
+        
         objRemoto = (IControladorGestionNotificaciones) UtilidadesRegistroC.obtenerObjRemoto(direccionIpRMIRegistry,numPuertoRMIRegistry, "objServicioGestionNotificaciones");
         IClienteNotificacionCallbackImp objRemotoClienteNotificacion = new IClienteNotificacionCallbackImp();
-        objRemoto.registrarReferenciaRemotaClienteNotificacion(objRemotoClienteNotificacion);
-
+        int id=objRemoto.registrarReferenciaRemotaClienteNotificacion(objRemotoClienteNotificacion);
+        IClienteNotificacionCallbackImp.setId(id);
         System.out.println("Esperando notificaciones...");
     }
 }

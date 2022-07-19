@@ -22,9 +22,9 @@ public class IControladorGestionNotificacionesImp extends UnicastRemoteObject im
     }
     
     @Override
-    public void registrarReferenciaRemotaClienteNotificacion(IClienteNotificacionCallback objReferencia) throws RemoteException {
+    public int registrarReferenciaRemotaClienteNotificacion(IClienteNotificacionCallback objReferencia) throws RemoteException {
        this.referenciasClientesNotificar.add(objReferencia);
-       
+       return referenciasClientesNotificar.size();
     }
     
     public void notificarClientes(SensorDTO objSensor) throws RemoteException{

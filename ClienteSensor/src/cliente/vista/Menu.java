@@ -34,6 +34,7 @@ public class Menu {
 
         while(true){
             try{
+                System.out.println("DATOS DEL SENSOR\n");
                 System.out.println("Digite la frecuencia cardiaca: ");
                 objIndicador.setFrecuenciaCardiaca(leerEntero());
                 System.out.println("Digite la presion sistolica: ");
@@ -50,7 +51,8 @@ public class Menu {
                 objSensor.setIndicador(objIndicador);
                 
                 objControladorRemotoSensor.enviarIndicadores(objSensor);
-                
+                System.out.println("Indicadores enviados...");
+                System.out.println("Registrando nuevo dato...");
             }catch(Exception e){
                 System.out.println("Excepcion tal: "+e.getMessage());
             }

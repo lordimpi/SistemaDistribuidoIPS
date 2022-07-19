@@ -25,11 +25,16 @@ public class ClienteSensor {
         
         int numPuertoRMIRegistry = 0;
         String direccionIpRMIRegistry = "";
+    /*
         System.out.println("Cual es el la dirección ip donde se encuentra  el rmiregistry ");
         direccionIpRMIRegistry = leerCadena();
         System.out.println("Cual es el número de puerto por el cual escucha el rmiregistry ");
         numPuertoRMIRegistry = leerEntero();
-
+*/
+    
+        direccionIpRMIRegistry = "localhost";
+        numPuertoRMIRegistry = 2020;
+    
         objRemoto = (IControladorSensor) UtilidadesRegistroC.obtenerObjRemoto(direccionIpRMIRegistry, numPuertoRMIRegistry, "objServicioGestionSensores");
         Menu objMenu = new Menu(objRemoto);
         objMenu.ejecutarMenuPrincipal();

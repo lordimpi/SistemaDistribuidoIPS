@@ -16,7 +16,8 @@ public class VistaDelServidor {
             //System.out.println("\nsecuencial \t concurrente");
             //tipo = objScanner.nextLine();
             System.out.println("Digite el puerto de escucha: ");
-            puerto = objScanner.nextInt();
+            //puerto = objScanner.nextInt();
+            puerto = 3030;
             PlantillaServidor objServidor = fabrica.obtenerTipoServidor(tipo);
             objServidor.inicializarServidor(puerto);
             objServidor.ejecutarServidor();

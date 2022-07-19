@@ -41,7 +41,7 @@ public class UtilidadesConsola
     	{
     		try
     		{
-                    System.out.println("Ingrese la opcion: ");
+                   
                     BufferedReader br = new BufferedReader(new
                     InputStreamReader(System.in));
                     linea = br.readLine();
@@ -67,7 +67,7 @@ public class UtilidadesConsola
     	{
     		try
     		{
-                    System.out.println("Ingrese la opcion: ");
+                   
                     BufferedReader br = new BufferedReader(new
                     InputStreamReader(System.in));
                     linea = br.readLine();
