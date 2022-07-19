@@ -1,12 +1,14 @@
 package servidor.servicios;
 
 import Common.Entidades.SensorDTO;
+import com.google.gson.Gson;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 
 public class Conexion_cliente_servidor {
+
     private String dirIpServidor = "";
     private int puertoServidor;
     private DataInputStream flujoEntrada;
@@ -14,7 +16,7 @@ public class Conexion_cliente_servidor {
     private Socket socket;
     private SensorDTO message;
 
-    public void ServerConnection(String dirIP, int puerto){
+    public void ServerConnection(String dirIP, int puerto) {
         try {
             setDirIpServidor(dirIP);
             setPuertoServidor(puerto);
@@ -25,18 +27,18 @@ public class Conexion_cliente_servidor {
             excep.printStackTrace();
         }
     }
-    
-    public SensorDTO peticion_respuesta(){
+
+    public void peticion_respuesta(SensorDTO objSensor) {
         String tmp = null;
         try {
-            flujoSalida.writeUTF("caracteristicas");
-            tmp = flujoEntrada.readUTF();// operacion bloqueante
-            message = GestionJSON.JsonToObject(tmp);
+            //NOtificacion objNotificacion=new Notificacion(indicadores con valor menor a 0);
+            Gson gson = new Gson();
+            String json = gson.toJson(objSensor);
+            flujoSalida.writeUTF(json);
             getSocket().close();
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-        return getMessage();
     }
 
     public String getDirIpServidor() {

@@ -3,6 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group/>
-        <group/>
+        <group>
+            <file>file:/D:/DOCUMENTOS/Documentos%20Adrian/1%20Universidad/2022/1%20SEM/1%20Sistemas%20Distribuidos/Parcial%202/Solucion/Nueva/SistemaDistribuidoIPS/Commnon/src/Common/Interfaces/IControladorGestionNotificaciones.java</file>
+            <file>file:/D:/DOCUMENTOS/Documentos%20Adrian/1%20Universidad/2022/1%20SEM/1%20Sistemas%20Distribuidos/Parcial%202/Solucion/Nueva/SistemaDistribuidoIPS/Commnon/src/Common/Utilidades/UtilidadesConsola.java</file>
+            <file>file:/D:/DOCUMENTOS/Documentos%20Adrian/1%20Universidad/2022/1%20SEM/1%20Sistemas%20Distribuidos/Parcial%202/Solucion/Nueva/SistemaDistribuidoIPS/Commnon/src/Common/Interfaces/IClienteNotificacionCallback.java</file>
+        </group>
     </open-files>
 </project-private>

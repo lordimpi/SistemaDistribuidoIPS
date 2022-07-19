@@ -59,14 +59,4 @@ public class Menu {
             
         }
     }
-
-    private void Opcion1() 
-    {
-     
-    }
-
-    private void Opcion2() {
-      
-    }
-
 }

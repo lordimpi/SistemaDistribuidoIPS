@@ -8,8 +8,8 @@ import static Common.Utilidades.UtilidadesConsola.leerEntero;
 import Common.Utilidades.UtilidadesRegistroS;
 
 import java.rmi.RemoteException;
-import servidor.controladores.IControladorGestionNotificacionesImp;
-import servidor.controladores.IControladorSensorImp;
+import servidor.controladores.ControladorGestionNotificacionesImp;
+import servidor.controladores.ControladorSensorImp;
 
 /**
  *
@@ -35,6 +35,7 @@ public class ServidorDeObjetos {
         direccionIPServidorLogs = UtilidadesConsola.leerCadena();
         System.out.println("Ingrese el puerto de escucha: ");
         numPuertoServidorLogs = UtilidadesConsola.leerEntero();
+<<<<<<< HEAD
         */
         
         //NS puerto 2020 , ServLogs puerto 3030
@@ -50,14 +51,17 @@ public class ServidorDeObjetos {
         IControladorSensorImp objRemotoGestionSensor = new IControladorSensorImp(servidorLog,objRemotoGestionNotificaciones);
         
         
+=======
+>>>>>>> origin/santiago
 
+        ControladorGestionNotificacionesImp objRemotoGestionNotificaciones = new ControladorGestionNotificacionesImp();
+        cliente.ServerConnection(direccionIPServidorLogs, numPuertoServidorLogs);
+        ControladorSensorImp objRemotoGestionSensor = new ControladorSensorImp(objRemotoGestionNotificaciones, cliente);
 
         try {
             UtilidadesRegistroS.arrancarNS(numPuertoRMIRegistryServidorCanciones);
-            UtilidadesRegistroS.RegistrarObjetoRemoto(objRemotoGestionNotificaciones, direccionIpRMIRegistryServidorCanciones,numPuertoRMIRegistryServidorCanciones, "objServicioGestionNotificaciones");
+            UtilidadesRegistroS.RegistrarObjetoRemoto(objRemotoGestionNotificaciones, direccionIpRMIRegistryServidorCanciones, numPuertoRMIRegistryServidorCanciones, "objServicioGestionNotificaciones");
             UtilidadesRegistroS.RegistrarObjetoRemoto(objRemotoGestionSensor, direccionIpRMIRegistryServidorCanciones, numPuertoRMIRegistryServidorCanciones, "objServicioGestionSensores");
-            cliente.ServerConnection(direccionIPServidorLogs, numPuertoServidorLogs);
-
 
         } catch (Exception e) {
             System.err.println("No fue posible Arrancar el NS o Registrar el objeto remoto" + e.getMessage());
