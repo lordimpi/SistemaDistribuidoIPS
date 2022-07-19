@@ -2,21 +2,7 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-
-        <group>
-            <file>file:/D:/DOCUMENTOS/Documentos%20Adrian/1%20Universidad/2022/1%20SEM/1%20Sistemas%20Distribuidos/Parcial%202/Solucion/Entregar/SistemaDistribuidoIPS/Commnon/src/Common/Entidades/IndicadorClinicoDTO.java</file>
-            <file>file:/D:/DOCUMENTOS/Documentos%20Adrian/1%20Universidad/2022/1%20SEM/1%20Sistemas%20Distribuidos/Parcial%202/Solucion/Entregar/SistemaDistribuidoIPS/Commnon/src/Common/Interfaces/IControladorGestionNotificaciones.java</file>
-            <file>file:/D:/DOCUMENTOS/Documentos%20Adrian/1%20Universidad/2022/1%20SEM/1%20Sistemas%20Distribuidos/Parcial%202/Solucion/Entregar/SistemaDistribuidoIPS/Commnon/src/Common/Utilidades/UtilidadesRegistroC.java</file>
-            <file>file:/D:/DOCUMENTOS/Documentos%20Adrian/1%20Universidad/2022/1%20SEM/1%20Sistemas%20Distribuidos/Parcial%202/Solucion/Entregar/SistemaDistribuidoIPS/Commnon/src/Common/Entidades/SensorDTO.java</file>
-            <file>file:/D:/DOCUMENTOS/Documentos%20Adrian/1%20Universidad/2022/1%20SEM/1%20Sistemas%20Distribuidos/Parcial%202/Solucion/Entregar/SistemaDistribuidoIPS/Commnon/src/Common/Utilidades/UtilidadesRegistroS.java</file>
-            <file>file:/D:/DOCUMENTOS/Documentos%20Adrian/1%20Universidad/2022/1%20SEM/1%20Sistemas%20Distribuidos/Parcial%202/Solucion/Entregar/SistemaDistribuidoIPS/Commnon/src/Common/Interfaces/IControladorLog.java</file>
-            <file>file:/D:/DOCUMENTOS/Documentos%20Adrian/1%20Universidad/2022/1%20SEM/1%20Sistemas%20Distribuidos/Parcial%202/Solucion/Entregar/SistemaDistribuidoIPS/Commnon/src/Common/Interfaces/IClienteNotificacionCallback.java</file>
-            <file>file:/D:/DOCUMENTOS/Documentos%20Adrian/1%20Universidad/2022/1%20SEM/1%20Sistemas%20Distribuidos/Parcial%202/Solucion/Entregar/SistemaDistribuidoIPS/Commnon/src/Common/Entidades/TensionArterialDTO.java</file>
-            <file>file:/D:/DOCUMENTOS/Documentos%20Adrian/1%20Universidad/2022/1%20SEM/1%20Sistemas%20Distribuidos/Parcial%202/Solucion/Entregar/SistemaDistribuidoIPS/Commnon/src/Common/Utilidades/UtilidadesConsola.java</file>
-            <file>file:/D:/DOCUMENTOS/Documentos%20Adrian/1%20Universidad/2022/1%20SEM/1%20Sistemas%20Distribuidos/Parcial%202/Solucion/Entregar/SistemaDistribuidoIPS/Commnon/src/Common/Interfaces/IControladorSensor.java</file>
-        </group>
-
         <group/>
-
+        <group/>
     </open-files>
 </project-private>

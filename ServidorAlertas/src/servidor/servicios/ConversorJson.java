@@ -1,4 +1,4 @@
-package co.edu.unicauca.servicios;
+package servidor.servicios;
 
 import Common.Entidades.SensorDTO;
 import com.google.gson.Gson;

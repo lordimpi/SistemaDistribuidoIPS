@@ -33,20 +33,15 @@ public class ServidorDeObjetos {
         direccionIPServidorLogs = UtilidadesConsola.leerCadena();
         System.out.println("Ingrese el puerto de escucha: ");
         numPuertoServidorLogs = UtilidadesConsola.leerEntero();
-        
-        IControladorLogImp servidorLog = new IControladorLogImp();
-        ControladorGestionNotificacionesImp objRemotoGestionNotificaciones = new ControladorGestionNotificacionesImp();
-        ControladorSensorImp objRemotoGestionSensor = new ControladorSensorImp(servidorLog,objRemotoGestionNotificaciones);
-        
-        
 
+        ControladorGestionNotificacionesImp objRemotoGestionNotificaciones = new ControladorGestionNotificacionesImp();
+        cliente.ServerConnection(direccionIPServidorLogs, numPuertoServidorLogs);
+        ControladorSensorImp objRemotoGestionSensor = new ControladorSensorImp(objRemotoGestionNotificaciones, cliente);
 
         try {
             UtilidadesRegistroS.arrancarNS(numPuertoRMIRegistryServidorCanciones);
-            UtilidadesRegistroS.RegistrarObjetoRemoto(objRemotoGestionNotificaciones, direccionIpRMIRegistryServidorCanciones,numPuertoRMIRegistryServidorCanciones, "objServicioGestionNotificaciones");
+            UtilidadesRegistroS.RegistrarObjetoRemoto(objRemotoGestionNotificaciones, direccionIpRMIRegistryServidorCanciones, numPuertoRMIRegistryServidorCanciones, "objServicioGestionNotificaciones");
             UtilidadesRegistroS.RegistrarObjetoRemoto(objRemotoGestionSensor, direccionIpRMIRegistryServidorCanciones, numPuertoRMIRegistryServidorCanciones, "objServicioGestionSensores");
-            cliente.ServerConnection(direccionIPServidorLogs, numPuertoServidorLogs);
-
 
         } catch (Exception e) {
             System.err.println("No fue posible Arrancar el NS o Registrar el objeto remoto" + e.getMessage());
