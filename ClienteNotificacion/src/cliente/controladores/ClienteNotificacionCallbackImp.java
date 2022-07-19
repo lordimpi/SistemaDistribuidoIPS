@@ -1,6 +1,5 @@
 package cliente.controladores;
 
-import Common.Entidades.IndicadorClinicoDTO;
 import Common.Entidades.SensorDTO;
 import Common.Interfaces.IClienteNotificacionCallback;
 import cliente.vistas.GUICliente;
@@ -15,13 +14,13 @@ public class ClienteNotificacionCallbackImp extends UnicastRemoteObject implemen
     }
 
     public ClienteNotificacionCallbackImp(GUICliente objGUI) throws RemoteException {
-        super();
+        super(); //Asigna puerto escucha
         this.objGUI = objGUI;
     }
 
     @Override
-    public void notificarAlerta(SensorDTO objSensor) throws RemoteException {
-        this.objGUI.mostrarNotificacion(objSensor);
+    public void notificarAlerta(SensorDTO objSensor) throws RemoteException { //recibe el mensaje
+        this.objGUI.mostrarNotificacion(objSensor); //muestra mensaje en GUI
 
     }
 

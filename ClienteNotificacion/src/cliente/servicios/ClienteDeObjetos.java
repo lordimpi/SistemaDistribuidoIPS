@@ -29,9 +29,10 @@ public class ClienteDeObjetos {
         direccionIpRMIRegistry = "localhost";
         numPuertoRMIRegistry = 2020;
         
-        objRemoto = (IControladorGestionNotificaciones) UtilidadesRegistroC.obtenerObjRemoto(direccionIpRMIRegistry,numPuertoRMIRegistry, "objServicioGestionNotificaciones");
-        ClienteNotificacionCallbackImp objRemotoClienteNotificacion = new ClienteNotificacionCallbackImp(objGUI);
-        int id=objRemoto.registrarReferenciaRemotaClienteNotificacion(objRemotoClienteNotificacion);
+        objRemoto = (IControladorGestionNotificaciones) UtilidadesRegistroC.
+                obtenerObjRemoto(direccionIpRMIRegistry,numPuertoRMIRegistry, "objServicioGestionNotificaciones"); //consultar OR
+        ClienteNotificacionCallbackImp objRemotoClienteNotificacion = new ClienteNotificacionCallbackImp(objGUI); //Crear OR
+        int id=objRemoto.registrarReferenciaRemotaClienteNotificacion(objRemotoClienteNotificacion); //enviar referencia 
         objGUI.setIdCliente(id);
         System.out.println("Esperando notificaciones...");
     }

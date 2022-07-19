@@ -50,7 +50,7 @@ public class Menu {
                 objIndicador.setTensionArterial(objTension);
                 objSensor.setIndicador(objIndicador);
                 
-                objControladorRemotoSensor.enviarIndicadores(objSensor);
+                objControladorRemotoSensor.enviarIndicadores(objSensor); //Cliente envia mensaje
                 System.out.println("Indicadores enviados...");
                 System.out.println("Registrando nuevo dato...");
             }catch(Exception e){

@@ -51,8 +51,10 @@ public class ServidorDeObjetos {
 
         try {
             UtilidadesRegistroS.arrancarNS(numPuertoRMIRegistryServidorAlertas);
-            UtilidadesRegistroS.RegistrarObjetoRemoto(objRemotoGestionNotificaciones, direccionIpRMIRegistryServidorAlertas, numPuertoRMIRegistryServidorAlertas, "objServicioGestionNotificaciones");
-            UtilidadesRegistroS.RegistrarObjetoRemoto(objRemotoGestionSensor, direccionIpRMIRegistryServidorAlertas, numPuertoRMIRegistryServidorAlertas, "objServicioGestionSensores");
+            UtilidadesRegistroS.RegistrarObjetoRemoto(objRemotoGestionNotificaciones, //registrar OR en el NS
+                    direccionIpRMIRegistryServidorAlertas, numPuertoRMIRegistryServidorAlertas, "objServicioGestionNotificaciones");
+            UtilidadesRegistroS.RegistrarObjetoRemoto(objRemotoGestionSensor, 
+                    direccionIpRMIRegistryServidorAlertas, numPuertoRMIRegistryServidorAlertas, "objServicioGestionSensores");
 
         } catch (Exception e) {
             System.err.println("No fue posible Arrancar el NS o Registrar el objeto remoto" + e.getMessage());

@@ -23,13 +23,13 @@ public class ControladorGestionNotificacionesImp extends UnicastRemoteObject imp
     
     @Override
     public int registrarReferenciaRemotaClienteNotificacion(IClienteNotificacionCallback objReferencia) throws RemoteException {
-       this.referenciasClientesNotificar.add(objReferencia);
+       this.referenciasClientesNotificar.add(objReferencia); //guarda referencia
        return referenciasClientesNotificar.size();
     }
     
     public void notificarClientes(SensorDTO objSensor) throws RemoteException{
-        for(IClienteNotificacionCallback referenciaCliente: referenciasClientesNotificar){
-            referenciaCliente.notificarAlerta(objSensor);
+        for(IClienteNotificacionCallback referenciaCliente: referenciasClientesNotificar){ //recorre la lista de referencias
+            referenciaCliente.notificarAlerta(objSensor); //envia mensaje a cada referencia
         }
     }
     

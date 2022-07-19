@@ -23,7 +23,7 @@ public class ControladorSensorImp extends UnicastRemoteObject implements IContro
      
 
     @Override
-    public void enviarIndicadores(SensorDTO objSensor) throws RemoteException {
+    public void enviarIndicadores(SensorDTO objSensor) throws RemoteException { //recibe mensaje
         System.out.println("Se recibio informacion del sensor de la habitacion " + objSensor.getNumeroHabitacion());
         IndicadorClinicoDTO objIndicadores = objSensor.getIndicador();
         int contarIndicadores = 0;
