@@ -1,6 +1,8 @@
 package co.edu.unicauca.modelo;
 
 import Common.Entidades.SensorDTO;
+import co.edu.unicauca.servicios.ConversorJson;
+import co.edu.unicauca.servicios.GestionJSON;
 import com.google.gson.Gson;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -27,9 +29,9 @@ public class GestorDeHilo extends Thread {
             flujoSalida = new DataOutputStream(objSocketCliente.getOutputStream());
             message = flujoEntrada.readUTF();//se bloquea el servidor
             SensorDTO objSensor = new SensorDTO();
-            Gson gson = new Gson();
-            objSensor = gson.fromJson(message, objSensor.getClass());
-            System.out.println("El sensor de la habitacion " + objSensor.getNumeroHabitacion() + " presenta fallas");
+            objSensor = GestionJSON.JsonToObject(message);
+            
+            System.out.println(objSensor.toString());
             objSocketCliente.close();
         } catch (IOException ex) {
             ex.printStackTrace();

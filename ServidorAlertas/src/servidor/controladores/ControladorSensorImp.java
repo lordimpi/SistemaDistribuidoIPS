@@ -14,15 +14,13 @@ import servidor.servicios.Conexion_cliente_servidor;
  *
  * @author adrianfelipegp
  */
-public class IControladorSensorImp extends UnicastRemoteObject implements IControladorSensor {
+public class ControladorSensorImp extends UnicastRemoteObject implements IControladorSensor {
 
-    //private final IControladorLog servidorLog;
-    private final IControladorGestionNotificacionesImp controladorNotificaciones;
+    private final ControladorGestionNotificacionesImp controladorNotificaciones;
     private final Conexion_cliente_servidor clienteLog;
 
-    public IControladorSensorImp(IControladorGestionNotificacionesImp controladorNotificaciones,
-            Conexion_cliente_servidor clienteLog) throws RemoteException {
-        //this.servidorLog = servidorLog;
+    public ControladorSensorImp(ControladorGestionNotificacionesImp controladorNotificaciones,
+        Conexion_cliente_servidor clienteLog) throws RemoteException {
         this.controladorNotificaciones = controladorNotificaciones;
         this.clienteLog = clienteLog;
     }
@@ -42,7 +40,7 @@ public class IControladorSensorImp extends UnicastRemoteObject implements IContr
 
             //aqui va el cliente para el log
             clienteLog.peticion_respuesta(objSensor);
-            // servidorLog.informarExcepcion(objSensor, Calendar.getInstance());
+ 
         } else {
             if (!(objIndicadores.getFrecuenciaCardiaca() >= 60 && objIndicadores.getFrecuenciaCardiaca() <= 80)) {
                 contarIndicadores++;

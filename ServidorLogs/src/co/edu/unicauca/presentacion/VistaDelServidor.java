@@ -11,10 +11,7 @@ public class VistaDelServidor {
             String tipo = "concurrente";
             int puerto = 0;
             FabricaServidor fabrica = new FabricaServidor();
-            //System.out.println("======== Seleccione el tipo de servidor ==========");
-            //System.out.println("Digite el tipo de servidor que desea utilizar");
-            //System.out.println("\nsecuencial \t concurrente");
-            //tipo = objScanner.nextLine();
+
             System.out.println("Digite el puerto de escucha: ");
             //puerto = objScanner.nextInt();
             puerto = 3030;

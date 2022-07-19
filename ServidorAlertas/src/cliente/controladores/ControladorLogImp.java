@@ -12,7 +12,7 @@ import java.util.Calendar;
  *
  * @author adrianfelipegp
  */
-public class IControladorLogImp implements IControladorLog{
+public class ControladorLogImp implements IControladorLog{
 
     @Override
     public void informarExcepcion(SensorDTO objsensor, Calendar fecha) {

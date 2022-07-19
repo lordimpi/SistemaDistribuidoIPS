@@ -1,6 +1,6 @@
 package servidor.servicios;
 
-import cliente.controladores.IControladorLogImp;
+import cliente.controladores.ControladorLogImp;
 
 import Common.Utilidades.UtilidadesConsola;
 import static Common.Utilidades.UtilidadesConsola.leerCadena;
@@ -8,8 +8,8 @@ import static Common.Utilidades.UtilidadesConsola.leerEntero;
 import Common.Utilidades.UtilidadesRegistroS;
 
 import java.rmi.RemoteException;
-import servidor.controladores.IControladorGestionNotificacionesImp;
-import servidor.controladores.IControladorSensorImp;
+import servidor.controladores.ControladorGestionNotificacionesImp;
+import servidor.controladores.ControladorSensorImp;
 
 /**
  *
@@ -46,9 +46,9 @@ public class ServidorDeObjetos {
         numPuertoServidorLogs = 3030;
         
         
-        IControladorGestionNotificacionesImp objRemotoGestionNotificaciones = new IControladorGestionNotificacionesImp();
+        ControladorGestionNotificacionesImp objRemotoGestionNotificaciones = new ControladorGestionNotificacionesImp();
         cliente.ServerConnection(direccionIPServidorLogs, numPuertoServidorLogs);
-        IControladorSensorImp objRemotoGestionSensor = new IControladorSensorImp(objRemotoGestionNotificaciones, cliente);
+        ControladorSensorImp objRemotoGestionSensor = new ControladorSensorImp(objRemotoGestionNotificaciones, cliente);
 
         try {
             UtilidadesRegistroS.arrancarNS(numPuertoRMIRegistryServidorCanciones);

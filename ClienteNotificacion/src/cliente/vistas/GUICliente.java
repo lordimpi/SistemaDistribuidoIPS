@@ -23,6 +23,7 @@ public class GUICliente extends javax.swing.JFrame {
         initComponents();
         this.setVisible(false);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -137,7 +138,7 @@ public class GUICliente extends javax.swing.JFrame {
     this.lblContexto.setText(menContexto);
     this.txtIndicadores.setText(menIndicadores);
     this.setVisible(true);
-         
+      
    
     }
 

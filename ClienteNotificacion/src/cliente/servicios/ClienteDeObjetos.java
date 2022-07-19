@@ -1,6 +1,6 @@
 package cliente.servicios;
 
-import cliente.controladores.IClienteNotificacionCallbackImp;
+import cliente.controladores.ClienteNotificacionCallbackImp;
 import Common.Utilidades.UtilidadesRegistroC;
 import java.rmi.RemoteException;
 import Common.Interfaces.IControladorGestionNotificaciones;
@@ -26,12 +26,11 @@ public class ClienteDeObjetos {
         numPuertoRMIRegistry = Common.Utilidades.UtilidadesConsola.leerEntero();
         */
         
-      
         direccionIpRMIRegistry = "localhost";
         numPuertoRMIRegistry = 2020;
         
         objRemoto = (IControladorGestionNotificaciones) UtilidadesRegistroC.obtenerObjRemoto(direccionIpRMIRegistry,numPuertoRMIRegistry, "objServicioGestionNotificaciones");
-        IClienteNotificacionCallbackImp objRemotoClienteNotificacion = new IClienteNotificacionCallbackImp(objGUI);
+        ClienteNotificacionCallbackImp objRemotoClienteNotificacion = new ClienteNotificacionCallbackImp(objGUI);
         int id=objRemoto.registrarReferenciaRemotaClienteNotificacion(objRemotoClienteNotificacion);
         objGUI.setIdCliente(id);
         System.out.println("Esperando notificaciones...");
