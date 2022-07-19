@@ -35,7 +35,7 @@ public class ServidorDeObjetos {
         direccionIPServidorLogs = UtilidadesConsola.leerCadena();
         System.out.println("Ingrese el puerto de escucha: ");
         numPuertoServidorLogs = UtilidadesConsola.leerEntero();
-<<<<<<< HEAD
+
         */
         
         //NS puerto 2020 , ServLogs puerto 3030
@@ -46,15 +46,7 @@ public class ServidorDeObjetos {
         numPuertoServidorLogs = 3030;
         
         
-        IControladorLogImp servidorLog = new IControladorLogImp();
-        IControladorGestionNotificacionesImp objRemotoGestionNotificaciones = new IControladorGestionNotificacionesImp();
-        IControladorSensorImp objRemotoGestionSensor = new IControladorSensorImp(servidorLog,objRemotoGestionNotificaciones);
-        
-        
-=======
->>>>>>> origin/santiago
-
-        ControladorGestionNotificacionesImp objRemotoGestionNotificaciones = new ControladorGestionNotificacionesImp();
+         ControladorGestionNotificacionesImp objRemotoGestionNotificaciones = new ControladorGestionNotificacionesImp();
         cliente.ServerConnection(direccionIPServidorLogs, numPuertoServidorLogs);
         ControladorSensorImp objRemotoGestionSensor = new ControladorSensorImp(objRemotoGestionNotificaciones, cliente);
 
