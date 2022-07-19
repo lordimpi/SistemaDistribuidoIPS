@@ -27,9 +27,9 @@ public class ServidorDeObjetos {
         
         /*
         System.out.println("Cual es el la dirección ip donde se encuentra  el rmiRegistry servidor Alertas");
-        direccionIpRMIRegistryServidorCanciones = leerCadena();
+        direccionIpRMIRegistryServidorLogs = leerCadena();
         System.out.println("Cual es el número de puerto por el cual escucha el rmiRegistry servidor Alertas");
-        numPuertoRMIRegistryServidorCanciones = leerEntero();
+        numPuertoRMIRegistryServidorLogs = leerEntero();
         
         System.out.println("Ingrese La direccion IP del servidor de Logs: ");
         direccionIPServidorLogs = UtilidadesConsola.leerCadena();
