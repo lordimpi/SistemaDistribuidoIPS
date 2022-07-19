@@ -34,7 +34,7 @@ public class Conexion_cliente_servidor {
             //NOtificacion objNotificacion=new Notificacion(indicadores con valor menor a 0); 
             String json = GestionJSON.objectToJson(objSensor);
             flujoSalida.writeUTF(json);
-            //getSocket().close();
+            getSocket().close();
         } catch (IOException ex) {
             ex.printStackTrace();
         }

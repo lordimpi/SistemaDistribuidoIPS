@@ -17,7 +17,7 @@ public class ControladorGestionNotificacionesImp extends UnicastRemoteObject imp
     private final ArrayList<IClienteNotificacionCallback> referenciasClientesNotificar;
     
     public ControladorGestionNotificacionesImp() throws RemoteException{
-        super();
+        super(); //asigna puerto de escucha
         this.referenciasClientesNotificar = new ArrayList<IClienteNotificacionCallback>();
     }
     
