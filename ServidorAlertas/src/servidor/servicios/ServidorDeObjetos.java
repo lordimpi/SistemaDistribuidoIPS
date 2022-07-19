@@ -45,10 +45,10 @@ public class ServidorDeObjetos {
         direccionIPServidorLogs = "localhost";
         numPuertoServidorLogs = 3030;
         
-        
+        ControladorLogImp ControladorLog = new ControladorLogImp(cliente);
         ControladorGestionNotificacionesImp objRemotoGestionNotificaciones = new ControladorGestionNotificacionesImp();
         cliente.ServerConnection(direccionIPServidorLogs, numPuertoServidorLogs);
-        ControladorSensorImp objRemotoGestionSensor = new ControladorSensorImp(objRemotoGestionNotificaciones, cliente);
+        ControladorSensorImp objRemotoGestionSensor = new ControladorSensorImp(objRemotoGestionNotificaciones, ControladorLog);
 
         try {
             UtilidadesRegistroS.arrancarNS(numPuertoRMIRegistryServidorCanciones);

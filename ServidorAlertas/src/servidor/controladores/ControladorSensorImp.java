@@ -3,12 +3,9 @@ package servidor.controladores;
 import Common.Entidades.IndicadorClinicoDTO;
 import java.rmi.server.UnicastRemoteObject;
 import Common.Entidades.SensorDTO;
-
 import Common.Interfaces.IControladorLog;
 import Common.Interfaces.IControladorSensor;
 import java.rmi.RemoteException;
-import java.util.Calendar;
-import servidor.servicios.Conexion_cliente_servidor;
 
 /**
  *
@@ -17,13 +14,13 @@ import servidor.servicios.Conexion_cliente_servidor;
 public class ControladorSensorImp extends UnicastRemoteObject implements IControladorSensor {
 
     private final ControladorGestionNotificacionesImp controladorNotificaciones;
-    private final Conexion_cliente_servidor clienteLog;
+    private final IControladorLog controladorLog;
 
-    public ControladorSensorImp(ControladorGestionNotificacionesImp controladorNotificaciones,
-        Conexion_cliente_servidor clienteLog) throws RemoteException {
+    public ControladorSensorImp(ControladorGestionNotificacionesImp controladorNotificaciones, IControladorLog controladorLog) throws RemoteException{
         this.controladorNotificaciones = controladorNotificaciones;
-        this.clienteLog = clienteLog;
+        this.controladorLog = controladorLog;
     }
+     
 
     @Override
     public void enviarIndicadores(SensorDTO objSensor) throws RemoteException {
@@ -39,7 +36,7 @@ public class ControladorSensorImp extends UnicastRemoteObject implements IContro
                 || objIndicadores.getTensionArterial().getPresionDiastolica() <= 0) {
 
             //aqui va el cliente para el log
-            clienteLog.peticion_respuesta(objSensor);
+            controladorLog.informarExcepcion(objSensor);
  
         } else {
             if (!(objIndicadores.getFrecuenciaCardiaca() >= 60 && objIndicadores.getFrecuenciaCardiaca() <= 80)) {

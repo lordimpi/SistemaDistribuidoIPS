@@ -7,16 +7,22 @@ package cliente.controladores;
 import Common.Entidades.SensorDTO;
 import Common.Interfaces.IControladorLog;
 import java.util.Calendar;
+import servidor.servicios.Conexion_cliente_servidor;
 
 /**
  *
  * @author adrianfelipegp
  */
 public class ControladorLogImp implements IControladorLog{
+    private final Conexion_cliente_servidor clienteLog;
 
+    public ControladorLogImp(Conexion_cliente_servidor clienteLog) {
+        this.clienteLog = clienteLog;
+    }
+    
     @Override
-    public void informarExcepcion(SensorDTO objsensor, Calendar fecha) {
-        System.out.println("Informando al servidor de logs...");
+    public void informarExcepcion(SensorDTO objsensor) {
+       clienteLog.peticion_respuesta(objsensor);
     }
 
 }

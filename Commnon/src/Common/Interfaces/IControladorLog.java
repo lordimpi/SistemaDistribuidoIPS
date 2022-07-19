@@ -12,5 +12,5 @@ import java.util.Calendar;
  * @author adrianfelipegp
  */
 public interface IControladorLog {
-    public void informarExcepcion(SensorDTO objsensor, Calendar  fecha);
+    public void informarExcepcion(SensorDTO objsensor);
 }
