@@ -20,9 +20,9 @@ public class ServidorDeObjetos {
     public static void main(String args[]) throws RemoteException {
 
         Conexion_cliente_servidor cliente = new Conexion_cliente_servidor();
-        int numPuertoRMIRegistryServidorCanciones;
+        int numPuertoRMIRegistryServidorAlertas;
         int numPuertoServidorLogs;
-        String direccionIpRMIRegistryServidorCanciones;
+        String direccionIpRMIRegistryServidorAlertas;
         String direccionIPServidorLogs;
         
         /*
@@ -40,19 +40,19 @@ public class ServidorDeObjetos {
         
         //NS puerto 2020 , ServLogs puerto 3030
               
-        direccionIpRMIRegistryServidorCanciones = "localhost";
-        numPuertoRMIRegistryServidorCanciones = 2020;
+        direccionIpRMIRegistryServidorAlertas = "localhost";
+        numPuertoRMIRegistryServidorAlertas = 2020;
         direccionIPServidorLogs = "localhost";
         numPuertoServidorLogs = 3030;
         
         ControladorLogImp ControladorLog = new ControladorLogImp(cliente);
-        ControladorGestionNotificacionesImp objRemotoGestionNotificaciones = new ControladorGestionNotificacionesImp();
+        ControladorGestionNotificacionesImp objRemotoGestionNotificaciones = new ControladorGestionNotificacionesImp(); //crear OR
         ControladorSensorImp objRemotoGestionSensor = new ControladorSensorImp(objRemotoGestionNotificaciones, ControladorLog);
 
         try {
-            UtilidadesRegistroS.arrancarNS(numPuertoRMIRegistryServidorCanciones);
-            UtilidadesRegistroS.RegistrarObjetoRemoto(objRemotoGestionNotificaciones, direccionIpRMIRegistryServidorCanciones, numPuertoRMIRegistryServidorCanciones, "objServicioGestionNotificaciones");
-            UtilidadesRegistroS.RegistrarObjetoRemoto(objRemotoGestionSensor, direccionIpRMIRegistryServidorCanciones, numPuertoRMIRegistryServidorCanciones, "objServicioGestionSensores");
+            UtilidadesRegistroS.arrancarNS(numPuertoRMIRegistryServidorAlertas);
+            UtilidadesRegistroS.RegistrarObjetoRemoto(objRemotoGestionNotificaciones, direccionIpRMIRegistryServidorAlertas, numPuertoRMIRegistryServidorAlertas, "objServicioGestionNotificaciones");
+            UtilidadesRegistroS.RegistrarObjetoRemoto(objRemotoGestionSensor, direccionIpRMIRegistryServidorAlertas, numPuertoRMIRegistryServidorAlertas, "objServicioGestionSensores");
 
         } catch (Exception e) {
             System.err.println("No fue posible Arrancar el NS o Registrar el objeto remoto" + e.getMessage());

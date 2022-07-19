@@ -30,7 +30,6 @@ public class GestorDeHilo extends Thread {
             objSensor = GestionJSON.JsonToObject(message);
             System.out.println("=================================\n");
             System.out.println(objSensor.toString());
-
             System.out.println("=================================\n");
             objSocketCliente.close();
 
