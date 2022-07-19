@@ -1,7 +1,7 @@
 package servidor.servicios;
 
 import Common.Entidades.SensorDTO;
-import com.google.gson.Gson;
+import Common.Utilidades.GestionJSON;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -31,9 +31,8 @@ public class Conexion_cliente_servidor {
     public void peticion_respuesta(SensorDTO objSensor) {
         String tmp = null;
         try {
-            //NOtificacion objNotificacion=new Notificacion(indicadores con valor menor a 0);
-            Gson gson = new Gson();
-            String json = gson.toJson(objSensor);
+            //NOtificacion objNotificacion=new Notificacion(indicadores con valor menor a 0); 
+            String json = GestionJSON.objectToJson(objSensor);
             flujoSalida.writeUTF(json);
             getSocket().close();
         } catch (IOException ex) {

@@ -1,9 +1,7 @@
 package co.edu.unicauca.modelo;
 
 import Common.Entidades.SensorDTO;
-import co.edu.unicauca.servicios.ConversorJson;
-import co.edu.unicauca.servicios.GestionJSON;
-import com.google.gson.Gson;
+import Common.Utilidades.GestionJSON;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
