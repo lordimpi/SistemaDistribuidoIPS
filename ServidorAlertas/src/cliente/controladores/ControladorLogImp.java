@@ -14,7 +14,7 @@ import servidor.servicios.Conexion_cliente_servidor;
  * @author adrianfelipegp
  */
 public class ControladorLogImp implements IControladorLog{
-    private final Conexion_cliente_servidor clienteLog;
+    private Conexion_cliente_servidor clienteLog;
 
     public ControladorLogImp(Conexion_cliente_servidor clienteLog) {
         this.clienteLog = clienteLog;
