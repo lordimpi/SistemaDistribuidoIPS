@@ -6,7 +6,6 @@ package cliente.controladores;
 
 import Common.Entidades.SensorDTO;
 import Common.Interfaces.IControladorLog;
-import java.util.Calendar;
 import servidor.servicios.Conexion_cliente_servidor;
 
 /**
@@ -22,6 +21,7 @@ public class ControladorLogImp implements IControladorLog{
     
     @Override
     public void informarExcepcion(SensorDTO objsensor) {
+       clienteLog.ServerConnection("localhost", 3030);
        clienteLog.peticion_respuesta(objsensor);
     }
 

@@ -47,7 +47,6 @@ public class ServidorDeObjetos {
         
         ControladorLogImp ControladorLog = new ControladorLogImp(cliente);
         ControladorGestionNotificacionesImp objRemotoGestionNotificaciones = new ControladorGestionNotificacionesImp();
-        cliente.ServerConnection(direccionIPServidorLogs, numPuertoServidorLogs);
         ControladorSensorImp objRemotoGestionSensor = new ControladorSensorImp(objRemotoGestionNotificaciones, ControladorLog);
 
         try {
