@@ -28,9 +28,12 @@ public class GestorDeHilo extends Thread {
             message = flujoEntrada.readUTF();//se bloquea el servidor
             SensorDTO objSensor = new SensorDTO();
             objSensor = GestionJSON.JsonToObject(message);
-            
+            System.out.println("=================================\n");
             System.out.println(objSensor.toString());
-            //objSocketCliente.close();
+
+            System.out.println("=================================\n");
+            objSocketCliente.close();
+
         } catch (IOException ex) {
             ex.printStackTrace();
         }
