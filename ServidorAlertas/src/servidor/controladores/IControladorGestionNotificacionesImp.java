@@ -12,11 +12,11 @@ import Common.Interfaces.IControladorGestionNotificaciones;
  *
  * @author adrianfelipegp
  */
-public class ControladorGestionNotificacionesImp extends UnicastRemoteObject implements IControladorGestionNotificaciones {
+public class IControladorGestionNotificacionesImp extends UnicastRemoteObject implements IControladorGestionNotificaciones {
     
     private final ArrayList<IClienteNotificacionCallback> referenciasClientesNotificar;
     
-    public ControladorGestionNotificacionesImp() throws RemoteException{
+    public IControladorGestionNotificacionesImp() throws RemoteException{
         super();
         this.referenciasClientesNotificar = new ArrayList<IClienteNotificacionCallback>();
     }

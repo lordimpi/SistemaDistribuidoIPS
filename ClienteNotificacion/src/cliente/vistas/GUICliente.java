@@ -4,6 +4,8 @@
  */
 package cliente.vistas;
 
+import Common.Entidades.IndicadorClinicoDTO;
+import Common.Entidades.SensorDTO;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import javax.swing.JFrame;
@@ -12,19 +14,15 @@ import javax.swing.JFrame;
  *
  * @author adrianfelipegp
  */
-public class FrmNotificacion extends javax.swing.JFrame {
-
+public class GUICliente extends javax.swing.JFrame {
+    private static int idCliente;
     /**
      * Creates new form FrmNotificacion
      */
-    public FrmNotificacion(int id,String contexto, String indicadores) {
+    public GUICliente() {
         initComponents();
-        this.setVisible(true);
-        this.lblContexto.setText(contexto);
-        this.txtIndicadores.setText(indicadores);
+        this.setVisible(false);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        this.setTitle("Notificacion Cliente Id:"+id);
-        
     }
 
     /**
@@ -35,7 +33,6 @@ public class FrmNotificacion extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
         lblEncabezado = new javax.swing.JLabel();
         lblContexto = new javax.swing.JLabel();
@@ -106,4 +103,46 @@ public class FrmNotificacion extends javax.swing.JFrame {
     private javax.swing.JLabel lblIndicadoresTexto;
     private javax.swing.JTextArea txtIndicadores;
     // End of variables declaration//GEN-END:variables
+
+    public void mostrarNotificacion(SensorDTO objSensor) {
+          String menContexto = "El paciente de la habitacion "+objSensor.getNumeroHabitacion() +" ";
+    String menIndicadores="";
+    int contarIndicadores=0;
+    IndicadorClinicoDTO objIndicadores = objSensor.getIndicador();
+    if (!(objIndicadores.getFrecuenciaCardiaca() >= 60 && objIndicadores.getFrecuenciaCardiaca() <= 80)) {
+        menIndicadores = menIndicadores+"Frecuencia cardiaca: "+objIndicadores.getFrecuenciaCardiaca()+"\n\n";
+        contarIndicadores++;
+    }
+    if (!(objIndicadores.getFrecuenciaRespiratoria() >= 12 && objIndicadores.getFrecuenciaRespiratoria() <= 20)) {
+        menIndicadores = menIndicadores+"Frecuencia respiratoria: "+objIndicadores.getFrecuenciaRespiratoria()+"\n\n";
+        contarIndicadores++;
+    }
+    if (!(objIndicadores.getSaturacionOxigeno() >= 95 && objIndicadores.getSaturacionOxigeno() <= 100)) {
+        menIndicadores = menIndicadores+"Saturacion de Oxigeno: "+objIndicadores.getSaturacionOxigeno()+"\n\n";
+        contarIndicadores++;
+    }
+    if (!(objIndicadores.getTemperatura() >= 36.2 && objIndicadores.getTemperatura() <= 37.2)) {
+        menIndicadores = menIndicadores+"Temperatura: "+objIndicadores.getTemperatura()+"\n\n";
+        contarIndicadores++;
+    }
+    if (!(objIndicadores.getTensionArterial().getPresionSistolica() >= 110 && objIndicadores.getTensionArterial().getPresionSistolica() <= 140)) {
+        menIndicadores = menIndicadores+"Presion arterial (Sistolica): "+objIndicadores.getTensionArterial().getPresionSistolica()+"\n\n";
+        contarIndicadores++;
+    }
+    if (!(objIndicadores.getTensionArterial().getPresionDiastolica() >= 70 && objIndicadores.getTensionArterial().getPresionDiastolica() <= 90)) {
+        menIndicadores = menIndicadores+"Presion arterial (Diastolica): "+objIndicadores.getTensionArterial().getPresionDiastolica()+"\n\n";
+        contarIndicadores++;
+    }
+    menContexto = menContexto + "presenta " + contarIndicadores + " indicadores fuera de rango.";
+    this.lblContexto.setText(menContexto);
+    this.txtIndicadores.setText(menIndicadores);
+    this.setVisible(true);
+         
+   
+    }
+
+    public void setIdCliente(int id) {
+        this.idCliente = id;
+        this.setTitle("Notificacion Cliente Id:"+id);
+    }
 }

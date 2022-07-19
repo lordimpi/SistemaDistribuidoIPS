@@ -3,22 +3,26 @@ package cliente.controladores;
 import Common.Entidades.IndicadorClinicoDTO;
 import Common.Entidades.SensorDTO;
 import Common.Interfaces.IClienteNotificacionCallback;
-import cliente.vistas.FrmNotificacion;
+import cliente.vistas.GUICliente;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
 public class IClienteNotificacionCallbackImp extends UnicastRemoteObject implements IClienteNotificacionCallback {
     private static int  idCliente;
+    private GUICliente objGUI;
     public static void setId(int id) {
         idCliente=id;
     }
 
-    public IClienteNotificacionCallbackImp() throws RemoteException {
+    public IClienteNotificacionCallbackImp(GUICliente objGUI) throws RemoteException {
         super();
+        this.objGUI = objGUI;
     }
 
     @Override
     public void notificarAlerta(SensorDTO objSensor) throws RemoteException {
+        this.objGUI.mostrarNotificacion(objSensor);
+        /*
     String menContexto = "El paciente de la habitacion "+objSensor.getNumeroHabitacion() +" ";
     String menIndicadores="";
     int contarIndicadores=0;
@@ -49,11 +53,11 @@ public class IClienteNotificacionCallbackImp extends UnicastRemoteObject impleme
     }
     menContexto = menContexto + "presenta " + contarIndicadores + " indicadores fuera de rango.";
     try{
-            FrmNotificacion frmNotificacion = new FrmNotificacion(idCliente,menContexto,menIndicadores);
+            GUICliente frmNotificacion = new GUICliente(idCliente,menContexto,menIndicadores);
     }catch(Exception e){
         System.out.println("Excepcion en form.");
     }
-
+*/
     }
 
 }
