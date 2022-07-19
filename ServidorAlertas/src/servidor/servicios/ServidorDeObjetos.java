@@ -20,16 +20,16 @@ public class ServidorDeObjetos {
     public static void main(String args[]) throws RemoteException {
 
         Conexion_cliente_servidor cliente = new Conexion_cliente_servidor();
-        int numPuertoRMIRegistryServidorCanciones;
+        int numPuertoRMIRegistryServidorAlertas;
         int numPuertoServidorLogs;
-        String direccionIpRMIRegistryServidorCanciones;
+        String direccionIpRMIRegistryServidorAlertas;
         String direccionIPServidorLogs;
         
         /*
         System.out.println("Cual es el la dirección ip donde se encuentra  el rmiRegistry servidor Alertas");
-        direccionIpRMIRegistryServidorCanciones = leerCadena();
+        direccionIpRMIRegistryServidorLogs = leerCadena();
         System.out.println("Cual es el número de puerto por el cual escucha el rmiRegistry servidor Alertas");
-        numPuertoRMIRegistryServidorCanciones = leerEntero();
+        numPuertoRMIRegistryServidorLogs = leerEntero();
         
         System.out.println("Ingrese La direccion IP del servidor de Logs: ");
         direccionIPServidorLogs = UtilidadesConsola.leerCadena();
@@ -40,8 +40,8 @@ public class ServidorDeObjetos {
         
         //NS puerto 2020 , ServLogs puerto 3030
               
-        direccionIpRMIRegistryServidorCanciones = "localhost";
-        numPuertoRMIRegistryServidorCanciones = 2020;
+        direccionIpRMIRegistryServidorAlertas = "localhost";
+        numPuertoRMIRegistryServidorAlertas = 2020;
         direccionIPServidorLogs = "localhost";
         numPuertoServidorLogs = 3030;
         
@@ -50,9 +50,9 @@ public class ServidorDeObjetos {
         ControladorSensorImp objRemotoGestionSensor = new ControladorSensorImp(objRemotoGestionNotificaciones, ControladorLog);
 
         try {
-            UtilidadesRegistroS.arrancarNS(numPuertoRMIRegistryServidorCanciones);
-            UtilidadesRegistroS.RegistrarObjetoRemoto(objRemotoGestionNotificaciones, direccionIpRMIRegistryServidorCanciones, numPuertoRMIRegistryServidorCanciones, "objServicioGestionNotificaciones");
-            UtilidadesRegistroS.RegistrarObjetoRemoto(objRemotoGestionSensor, direccionIpRMIRegistryServidorCanciones, numPuertoRMIRegistryServidorCanciones, "objServicioGestionSensores");
+            UtilidadesRegistroS.arrancarNS(numPuertoRMIRegistryServidorAlertas);
+            UtilidadesRegistroS.RegistrarObjetoRemoto(objRemotoGestionNotificaciones, direccionIpRMIRegistryServidorAlertas, numPuertoRMIRegistryServidorAlertas, "objServicioGestionNotificaciones");
+            UtilidadesRegistroS.RegistrarObjetoRemoto(objRemotoGestionSensor, direccionIpRMIRegistryServidorAlertas, numPuertoRMIRegistryServidorAlertas, "objServicioGestionSensores");
 
         } catch (Exception e) {
             System.err.println("No fue posible Arrancar el NS o Registrar el objeto remoto" + e.getMessage());
